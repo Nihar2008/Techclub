@@ -1,7 +1,8 @@
 #Using speech_recognition library
 import speech_recognition as speech
 import pyttsx3
-
+import datetime
+now = datetime.datetime.now()
 
 engine=pyttsx3.init()
 
@@ -31,7 +32,19 @@ while True:
             #Convert Voice Commands to Text
             command=r.recognize_google(audio)
             
-            print("You said: "+command)
+            if command=="Jarvis wake up":
+                    engine.say("Up and ready for you sir!")
+                    engine.runAndWait()
+
+            if command=="wake up Jarvis":
+                    engine.say("Up and here for you sir!")
+                    engine.runAndWait()
+            
+            if command=="tell me the time":
+                    engine.say("The time is:")
+                    engine.runAndWait()
+                    engine.say(now.strftime("%d-%m-%y %H:%M:%S"))
+                    engine.runAndWait()
         else:
             break
    
