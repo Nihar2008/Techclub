@@ -1,0 +1,169 @@
+print("Hi there!")
+name=input("Please enter your name:- ")
+print("Hello "+ name)
+print("Nice to meet you!")
+
+print("I am Will the mathematical chatbot.")
+print("Type out any sum regarding addition,subtraction,multiplication,division area and perimeter of a square.")
+print("I will give you the answer!")
+sumType=input("Which operation do you want to carry out? ")
+
+if sumType=="Addition":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1+num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="Subtraction":
+  num1=int(input("Please enter the 1st number:- "))
+  num2=int(input("Please enter the 2nd number:- "))
+  num3= num1-num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="Multiplication":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1*num2
+  print("Here is the solution")
+  print(num3)
+
+if sumType=="Division":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3=num1/num2
+  print("Here is the solution")
+  print(num3)
+  
+if sumType=="Perimeter of a square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+  
+if sumType=="Perimeter of square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+ 
+if sumType=="Area of a square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+if sumType=="Area of square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+if sumType=="addition":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1+num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="subtraction":
+  num1=int(input("Please enter the 1st number:- "))
+  num2=int(input("Please enter the 2nd number:- "))
+  num3= num1-num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="multiplication":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1*num2
+  print("Here is the solution")
+  print(num3)
+
+if sumType=="division":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3=num1/num2
+  print("Here is the solution")
+  print(num3)
+
+if sumType=="perimeter of a square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+  
+if sumType=="perimeter of square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+
+if sumType=="area of a square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+
+if sumType=="area of square":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+if sumType=="ADDITION":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1+num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="SUBTRACTION":
+  num1=int(input("Please enter the 1st number:- "))
+  num2=int(input("Please enter the 2nd number:- "))
+  num3= num1-num2
+  print("Here is the answer")
+  print(num3)
+
+if sumType=="MULTIPLICATION":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3= num1*num2
+  print("Here is the solution")
+  print(num3)
+
+if sumType=="DIVISION":
+  num1=int(input("Please enter the first number:- "))
+  num2=int(input("Please enter the second number:- "))
+  num3=num1/num2
+  print("Here is the solution")
+  print(num3)
+
+if sumType=="PERIMETER OF A SQUARE":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+  
+if sumType=="PERIMETER OF SQUARE":
+  length=int(input("Please enter the length of the side of a square:- "))
+  perimeter=length*4
+  print("Here is the solution")
+  print(perimeter)
+  
+if sumType=="AREA OF A SQUARE":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+if sumType=="AREA OF SQUARE":
+  length=int(input("Please enter the length of the side of a square:- "))
+  area=length*length
+  print("Here is the solution")
+  print(area)
+  
+print("Thank you for using this program!")
+print("press f5 to use this program again!")
