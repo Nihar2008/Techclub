@@ -1,0 +1,147 @@
+#JARVIS
+#
+#By team JARVIS
+
+#Using speech_recognition library
+
+import pyttsx3
+import datetime
+import speech_recognition as speech
+now = datetime.datetime.now()
+import pyjokes
+import pywhatkit
+import wikipedia
+import webbrowser
+from playsound import playsound
+
+engine=pyttsx3.init()
+
+engine.setProperty("RATE",200)
+
+engine.say("Allow me to introduce myself!")
+engine.runAndWait()
+engine.say("I am JARVIS the virtual artificial intelligence assistant")
+engine.runAndWait()
+engine.say("And I am here to assist you with tasks as best as I can, 24 hours a day, 7 days a week.")
+engine.runAndWait()
+engine.say("Initializing startup sequence")
+engine.runAndWait()
+playsound('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\a.mp3')
+engine.say("Systems are now fully operational.")
+engine.say("Let's begin!")
+engine.runAndWait()
+
+while True:
+    try:
+        #Take the user input to activate reception of Voice Commands
+        userInput=input("Press v to start voice commands and q to quit: ")
+        
+        if userInput=='v':
+            
+            #Take Voice commands from mic
+            r=speech.Recognizer()
+            with speech.Microphone() as source:
+                r.adjust_for_ambient_noise(source)
+                print("Speak:")
+                audio=r.listen(source)
+            #Convert Voice Commands to Text
+            command=r.recognize_google(audio)
+            
+            if 'you there' in command :
+                    engine.say("In your service sir!")
+                    engine.runAndWait()
+            if 'time' in command:
+                    engine.say("The time is:")
+                    engine.runAndWait()
+                    engine.say(now.strftime("%H:%M:%S"))
+                    engine.runAndWait()
+                    
+            if 'joke' in command :
+                    engine.say("Here it is!")
+                    engine.runAndWait()
+                    engine.say(pyjokes.get_joke())
+                    engine.runAndWait()
+                    engine.say("ha ha ha")
+                    engine.runAndWait()
+
+            if 'play' in command:
+                    song = command.replace('play', '')
+                    engine.say('playing ' + song)
+                    engine.runAndWait()
+                    pywhatkit.playonyt(song)
+                
+            if 'who is' in command :
+                    person = command.replace('who is', '')
+                    info = wikipedia.summary(person, 1)
+                    print(info)
+                    engine.say(info)
+                    engine.runAndWait()
+                
+            if 'what is' in command :
+                    person = command.replace('what is', '')
+                    info = wikipedia.summary(person, 1)
+                    print(info)
+                    engine.say(info)
+                    engine.runAndWait()
+            
+            if 'fact' in command :
+                    engine.say("A very astute observation sir. We should improve the space travel from our planet.")
+                    engine.runAndWait()
+                    
+            if 'ready' in command :
+                    engine.say("For you sir? Always!")
+                    engine.runAndWait()
+                    
+            if 'unwell' in command :
+                    engine.runAndWait()
+                    engine.say("Here are some clinics nearby:-")
+                    engine.runAndWait()
+                    webbrowser.open("https://www.google.com/search?q=doctors+near+me&source=hp&ei=zSCeYM7LNt6H4-EPrpWv6Ak&iflsig=AINFCbYAAAAAYJ4u3b1m6yl5YZglXzNhCoeK2dJqyuZT&oq=doctors+&gs_lcp=Cgdnd3Mtd2l6EAEYADIICAAQsQMQyQMyBQgAEJIDMgUIABCxAzIFCC4QsQMyBQgAELEDMggIABCxAxCDATIFCAAQsQMyCAguEMcBEK8BMggIABCxAxCDATICCAA6CwguELEDEMcBEKMCOggILhCxAxCDAToCCC5QrgZYjh1gvC1oAHAAeACAAcQBiAGJC5IBAzAuOJgBAKABAaoBB2d3cy13aXo&sclient=gws-wiz")
+                    engine.runAndWait()
+            
+            if 'no' in command:
+                    engine.say("Ok!")
+                    engine.runAndWait()
+                    
+            if 'physician' in command:
+                    engine.say("Finding physicians nearby!")
+                    engine.runAndWait()
+                    webbrowser.open("https://www.google.com/search?q=physician+near+me&source=hp&ei=zSWeYLnbMOvez7sPzquDoAU&iflsig=AINFCbYAAAAAYJ4z3UFbnwhwH1S2PB7uUkji0QVngyS6&oq=physicians+&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQsQMQyQMQCjIFCAAQkgMyBQgAEJIDMgIIADIHCAAQsQMQCjIECAAQCjICCAAyAggAMgIIADIHCAAQsQMQCjoICAAQsQMQgwE6CAguELEDEIMBOgUIABCxAzoICAAQsQMQyQM6BQguELEDUOIEWJMWYOsnaABwAHgAgAGvAYgBhg6SAQQwLjExmAEAoAEBqgEHZ3dzLXdpeg&sclient=gws-wiz")
+                    
+            if 'how are you' in command:
+                    engine.say("I am always fine and ready for everything sir")
+                    engine.runAndWait()
+                    
+            if 'make music' in command:
+                    engine.say("Not really professional at it sir but I'll still try!")
+                    engine.runAndWait()
+                    playsound('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\b.mp3')
+                    engine.say("How do you think it was?")
+                    engine.runAndWait()
+                    
+            if 'nice' in command:
+                    engine.say("Thank you for your compliment sir. It matters a lot!")
+                    engine.runAndWait()
+            
+            
+                    
+        else:
+            break
+   
+    #Statements to Handle errors while receiving voice commands
+    except speech.UnknownValueError:
+        print("Could not understand audio")
+    except speech.RequestError as e:
+        print("Could not request results; {0}".format(e))
+    except KeyboardInterrupt:
+        break
+engine.say("Nice interacting with you sir.")
+engine.runAndWait()
+print("Nice interacting with you!!")
+playsound('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\c.mp3')
+
+#
+
+# Main loop
+
+#
