@@ -1,0 +1,7 @@
+import datetime
+now = datetime.datetime.now()
+                if 'time' in command:
+                    engine.say("The time is:")
+                    engine.runAndWait()
+                    engine.say(now.strftime("%H:%M:%S"))
+                    engine.runAndWait()
