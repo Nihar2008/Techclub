@@ -1,0 +1,14 @@
+import webbrowser
+import pyttsx3
+
+engine=pyttsx3.init()
+
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+
+engine.setProperty("RATE",200)
+
+            if 'news' in command:
+                    engine.say("Opening some latest news for you sir!")
+                    engine.runAndWait()
+                    webbrowser.open('timesofindia.indiatimes.com')
