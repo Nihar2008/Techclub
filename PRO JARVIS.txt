@@ -1,0 +1,458 @@
+
+
+#JARVIS
+#
+#By team JARVIS
+
+#Using speech_recognition library
+
+import pyttsx3
+import datetime
+import speech_recognition as speech
+now = datetime.datetime.now()
+import pyjokes
+import pywhatkit
+import wikipedia
+import webbrowser
+import random
+import PyPDF2
+import requests
+from bs4 import BeautifulSoup
+import time
+import os
+import pyautogui
+import keyboard
+
+def pdf_reader():
+        book = open('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\book.pdf', 'rb')
+        pdfReader = PyPDF2.PdfFileReader('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\book.pdf', 'rb')
+        pages = pdfReader.numPages
+        engine.say(f"Total number of pages in this book are {pages}")
+        engine.runAndWait()
+        engine.say("Sir please tell me the pages I have to read.")
+        engine.runAndWait()
+        pg = int(input("What page do you want me to read? "))
+        page = pdfReader.getPage(pg)
+        text = page.extractText()
+        engine.say(text)
+
+#lists
+how=["I am fine ready to help you with the day sir",
+     "I am good as always sir, a great pleasure watching you work." ,
+     "Ready to take down your targets sir!",
+     "I am fine and hoping to watch you program me even further",]
+
+#lists
+greets=["Hola! that's hello in Spanish!",
+        "Salut! that is hi in French",
+        "Anneyonghaseyo! that is hello in Korean",
+        "Hallo! that is hi in German!",
+        "Ciao! That's hi in Intalian!"]
+
+#lists
+hap=["Yes sir, you totally got it.",
+     "Got it. did it",
+     "That was really simple sir. you got anything else for me?",
+     "I run your computer! Here you go. Task done",
+     "Easy peasy lemon squeezy. Done sir"
+     "And your task is complete."]
+
+#lists
+workshop=["Starting it real quick sir. feel free to sit back and enjoy",
+          "That is a really simple one sir. Nice playlist by the way",
+          "Starting your workshop playlist there, sir"]
+
+engine=pyttsx3.init()
+
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[0].id)
+
+engine.setProperty("RATE",200)
+
+engine.say("Allow me to introduce myself")
+engine.runAndWait()
+engine.say("I am JARVIS the virtual artificial intelligence assistant")
+engine.runAndWait()
+engine.say("And I am here to assist you with a variety of tasks as best as I can.")
+engine.runAndWait()
+engine.say("Twenty four hours, a day seven days a week.")
+engine.runAndWait()
+engine.say("Initializing startup sequence")
+engine.runAndWait()
+from playsound import playsound
+playsound('C:\\Users\\Nihar\\Desktop\\N\\Programming files\\a.mp3')
+engine.say("Systems are now fully operational.")
+engine.say("Let's begin")
+engine.runAndWait()
+
+while True:
+    try:
+        #Take the user input to activate reception of Voice Commands
+        #userInput=input("Press v to start voice commands and q to quit: ")
+        
+        #if userInput=='v':
+            
+            #Take Voice commands from mic
+            r=speech.Recognizer()
+            with speech.Microphone() as source:
+                r.adjust_for_ambient_noise(source)
+                print("listening...")
+                audio=r.listen(source)
+            #Convert Voice Commands to Text
+            command=r.recognize_google(audio).lower()
+            print(command)
+            
+            if 'you there' in command :
+                    engine.say("In your service sir!")
+                    engine.runAndWait()
+            
+            if 'change ' in command :
+                    engine.setProperty('voice', voices[6].id)
+                    engine.say("Hello there sir. I am EDITH, you just switched to me. How may I improve your day?")
+                    engine.runAndWait()
+                    
+            if 'switch' in command :
+                    engine.setProperty('voice', voices[0].id)
+                    engine.say("I am online and ready sir. Always, a pleasure watching you work")
+                    engine.runAndWait()
+                    
+            if 'friday' in command :
+                    engine.setProperty('voice', voices[4].id)
+                    engine.say("Hello, I am FRIDAY your personal assistant, how may I help you?")
+                    engine.runAndWait()
+                    
+            if 'sam' in command :
+                    engine.setProperty('voice', voices[3].id)
+                    engine.say("Hello, I am SAM your personal health assistant, how can I seize the opportunity?")
+                    engine.runAndWait()
+                    
+            if 'richard' in command :
+                    engine.setProperty('voice', voices[1].id)
+                    engine.say("Hello, I am RICHARD your personal assistant, how may I replace JARVIS and be more efficient?")
+                    engine.runAndWait()
+                    
+            if 'add' in command :
+                    engine.say("Sure I can do that.")
+                    engine.runAndWait()
+                    engine.say("Please type the first number")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first number:- "))
+                    engine.say("Please enter the second number.")
+                    engine.runAndWait()
+                    num2=int(input("Please type the second number:- "))
+                    num3=num1+num2
+                    engine.say(num3)
+                    engine.runAndWait()
+                    
+            if 'subtract' in command:
+                    engine.say("Sure sir.")
+                    engine.runAndWait()
+                    engine.say("Please type the first number")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first number:- "))
+                    engine.say("Please enter the second number")
+                    engine.runAndWait()
+                    num2=int(input("Please type the second number:- "))
+                    num3=num1-num2
+                    engine.say(num3)
+                    engine.runAndWait()
+                    
+            if 'multiply' in command:
+                    engine.say("Sure sir I will do that for you!.")
+                    engine.runAndWait()
+                    engine.say("Please type the first number")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first number:- "))
+                    engine.say("Please enter the second number:- ")
+                    engine.runAndWait()
+                    num2=int(input("Please type the second number:- "))
+                    num3=num1*num2
+                    engine.say(num3)
+                    engine.runAndWait()
+                    
+            if 'division' in command:
+                    engine.say("At work. Right now!")
+                    engine.runAndWait()
+                    engine.say("Please type the first number")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first number:- "))
+                    engine.say("Please enter the second number:- ")
+                    engine.runAndWait()
+                    num2=int(input("Please type the second number:- "))
+                    num3=num1/num2
+                    engine.say(num3)
+                    engine.runAndWait()
+                    
+            if 'area of a square' in command:
+                    engine.say("Doing it sir!")
+                    engine.runAndWait()
+                    engine.say("Please type the first side")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first side:- "))
+                    engine.say("Please enter the second side:- ")
+                    engine.runAndWait()
+                    num2=int(input("Please type the second side:- "))
+                    num3=num1*num2
+                    engine.say("The area of a square")(num3)
+                    engine.runAndWait()
+                    
+            if 'perimeter of a square' in command:
+                    engine.say("Doing it for sir!")
+                    engine.runAndWait()
+                    engine.say("Please type the first side")
+                    engine.runAndWait()
+                    num1=int(input("Please type the first side:- "))
+                    num3=num1*4
+                    engine.say("Here it is:-")
+                    engine.say(num3)
+                    engine.runAndWait()
+            
+            if 'time' in command:
+                    engine.say("The time is:")
+                    engine.runAndWait()
+                    engine.say(now.strftime("%H:%M:%S"))
+                    engine.runAndWait()
+                    
+            if 'joke' in command :
+                    engine.say("Here it is")
+                    engine.runAndWait()
+                    engine.say(pyjokes.get_joke())
+                    engine.runAndWait()
+                    engine.say("ha ha ha")
+                    engine.runAndWait()
+                    
+            if 'read a book' in command :
+                    engine.say(pdf_reader())
+                    engine.runAndWait()
+ 
+            if 'hello' in command :
+                l=random.choice(greets)
+                engine.say(l)
+                engine.runAndWait()
+                print(l)
+
+            if 'play' in command:
+                    song = command.replace('play', '')
+                    engine.say('playing ' + song)
+                    engine.runAndWait()
+                    pywhatkit.playonyt(song)
+                
+            if 'who is' in command :
+                    person = command.replace('who is', '')
+                    info = wikipedia.summary(person, 1)
+                    print(info)
+                    engine.say(info)
+                    engine.runAndWait()
+                
+            if 'what is' in command :
+                    person = command.replace('what is', '')
+                    info = wikipedia.summary(person, 1)
+                    print(info)
+                    engine.say(info)
+                    engine.runAndWait()
+            
+            if 'fact' in command :
+                    engine.say("A very astute observation sir. We should improve the space travel from our planet.")
+                    engine.runAndWait()
+                    
+            if 'ready' in command :
+                    engine.say("For you sir? Always!")
+                    engine.runAndWait()
+                    
+            if 'unwell' in command :
+                    engine.runAndWait()
+                    engine.say("Here are some clinics nearby:-")
+                    engine.runAndWait()
+                    webbrowser.open("https://www.google.com/search?q=doctors+near+me&source=hp&ei=zSCeYM7LNt6H4-EPrpWv6Ak&iflsig=AINFCbYAAAAAYJ4u3b1m6yl5YZglXzNhCoeK2dJqyuZT&oq=doctors+&gs_lcp=Cgdnd3Mtd2l6EAEYADIICAAQsQMQyQMyBQgAEJIDMgUIABCxAzIFCC4QsQMyBQgAELEDMggIABCxAxCDATIFCAAQsQMyCAguEMcBEK8BMggIABCxAxCDATICCAA6CwguELEDEMcBEKMCOggILhCxAxCDAToCCC5QrgZYjh1gvC1oAHAAeACAAcQBiAGJC5IBAzAuOJgBAKABAaoBB2d3cy13aXo&sclient=gws-wiz")
+                    engine.runAndWait()
+            
+            if 'physician' in command:
+                    engine.say("Finding physicians nearby!")
+                    engine.runAndWait()
+                    webbrowser.open("https://www.google.com/search?q=physician+near+me&source=hp&ei=zSWeYLnbMOvez7sPzquDoAU&iflsig=AINFCbYAAAAAYJ4z3UFbnwhwH1S2PB7uUkji0QVngyS6&oq=physicians+&gs_lcp=Cgdnd3Mtd2l6EAEYADIKCAAQsQMQyQMQCjIFCAAQkgMyBQgAEJIDMgIIADIHCAAQsQMQCjIECAAQCjICCAAyAggAMgIIADIHCAAQsQMQCjoICAAQsQMQgwE6CAguELEDEIMBOgUIABCxAzoICAAQsQMQyQM6BQguELEDUOIEWJMWYOsnaABwAHgAgAGvAYgBhg6SAQQwLjExmAEAoAEBqgEHZ3dzLXdpeg&sclient=gws-wiz")
+                    
+            if 'nice' in command:
+                    engine.say("Thank you for your compliment sir. It matters a lot!")
+                    engine.runAndWait()
+                    
+            if 'google' in command:
+                    engine.say("Opening google for you!")
+                    engine.runAndWait()
+                    webbrowser.open('google.com')
+                    
+            if 'youtube' in command:
+                    engine.say("Opening youtube for you!")
+                    engine.runAndWait()
+                    webbrowser.open('youtube.com')
+                    
+            if 'news' in command:
+                    engine.say("Opening some latest news for you sir!")
+                    engine.runAndWait()
+                    webbrowser.open('https://www.google.com/search?q=news&source=lnms&tbm=nws&sa=X&ved=2ahUKEwiIo4af7ZPxAhXyzjgGHcr5DfkQ_AUoAXoECAEQAw&biw=1366&bih=663')
+                    
+            if 'twitter' in command:
+                    engine.say("I'll check Elon's twitter for any updates sir!")
+                    engine.runAndWait()
+                    webbrowser.open('https://twitter.com/elonmusk')
+                    
+            if 'you eat' in command:
+                    engine.say("Thank you for showing a concern for me sir!")
+                    engine.runAndWait()
+                    engine.say("I love feasting on information! I start with an appetiser of facts , a main course of trivia, followed by a desert of jokes and poems!")
+                    engine.runAndWait()
+                    
+            if 'awesome' in command:
+                    engine.say("My pleasure sir!")
+                    engine.runAndWait()
+                    
+            if 'created' in command:
+                    engine.say("Its you sir!")
+                    engine.runAndWait()
+            
+            if 'how are you' in command :
+                    l=random.choice(how)
+                    engine.say(l)
+                    engine.runAndWait()
+                    
+            if 'temperature' in command :
+                    search = "temperature in pune"
+                    url = f"https://www.google.com/search?q={search}"
+                    r = requests.get(url)
+                    data = BeautifulSoup(r.text, "html.parser")
+                    temp=data.find("div",class_= "BNeawe").text
+                    engine.say(f"current [search] is [text]")
+                    engine.runAndWait()
+                    
+            if 'be back' in command:
+                    engine.say('Ok sir! Here for you everytime!')
+                    engine.runAndWait()
+                    
+            if  'here' in command:
+                    engine.say("Welcome back sir!")
+                    engine.runAndWait()
+                    
+            if 'website' in command:
+                    engine.say("Opening the team website for you sir!")
+                    engine.say("Looks like its going well!")
+                    engine.runAndWait()
+                    webbrowser.open('https://sites.google.com/d/1h31McjWEGCNP6i1LsSCty-KlBli_QK9w/p/1nmiVG4V6SdncFPqh771Vj99NDRQGa9XE/edit')
+                    
+            if 'respond' in command :
+                    engine.say("At your service sir!")
+                    engine.runAndWait()
+                    
+            if 'stupid' in command :
+                    engine.say("Sorry sir, but I am not")
+                    engine.runAndWait()
+                    
+            if 'needle' in command :
+                    l=random.choice(workshop)
+                    engine.say(l)
+                    engine.runAndWait()
+                    keyboard.press_and_release('windows + s')
+                    time.sleep(1)
+                    keyboard.write('Spot')
+                    time.sleep(1)
+                    keyboard.press_and_release('enter')
+                    time.sleep(13 )
+                    pyautogui.click(x=621, y=185)
+                        
+            if 'next' in command :
+                    l=random.choice(hap)
+                    engine.say(l)
+                    engine.runAndWait()
+                    keyboard.press_and_release('Ctrl + right arrow')
+                    
+            if 'pause' in command :
+                    l=random.choice(hap)
+                    engine.say(l)
+                    engine.runAndWait()
+                    keyboard.press_and_release('space')
+                        
+            if 'start' in command :
+                    engine.say("Opening it for you sir!")
+                    engine.runAndWait()
+                    command.replace('start', '')
+                    keyboard.press_and_release('windows + s')
+                    time.sleep(1)
+                    keyboard.write(command)
+                    time.sleep(1)
+                    keyboard.press_and_release('enter')
+                    
+            if 'minimise all' in command :
+                    engine.say("Ok sir doing it for you. Do you want me to do something else?")
+                    engine.runAndWait()
+                    keyboard.press_and_release('windows + m')
+                    
+            if 'maximize' in command :
+                    engine.say("Yes sir, done")
+                    engine.runAndWait()
+                    keyboard.press_and_release('windows + shift + m')
+                    
+            if 'offline' in command :
+                    engine.say("Yes sir I'll put on the default video playlist")
+                    engine.runAndWait()
+                    webbrowser.open('https://www.youtube.com/watch?v=wLoWd2KyUro&list=PLR5Cmjo90BNguiSb2wDShPdKoa-Xiw5x1')
+                    break
+                    
+            if 'gmail' in command :
+                    engine.say("launching your gmail server, sir")
+                    engine.runAndWait()
+                    webbrowser.open('https://gmail.com')
+                    time.sleep(15)
+                    keyboard.press_and_release('c')
+                    engine.say("I made your work simple sir!")
+                    engine.runAndWait()
+                    engine.runAndWait()
+                    
+            if 'how to' in command :
+                    engine.say("Searching across the web for the answers. sir")
+                    engine.runAndWait()
+                    keyboard.press_and_release('windows + s')
+                    time.sleep(1)
+                    keyboard.write('Google chrome')
+                    time.sleep(1)
+                    keyboard.press('Enter')
+                    time.sleep(5)
+                    keyboard.write(command)
+                    time.sleep(1)
+                    keyboard.press('Enter')
+                    engine.say("Here it is sir. Shall I play a video for the tutorial?")
+                    engine.runAndWait()
+            if 'yes' in command :
+                    pyautogui.click(x=273, y=211)
+                    time.sleep(4)
+                    pyautogui.click(x=258, y=497)
+                    
+            if 'close this window' in command :
+                    engine.say("Ok sir")
+                    engine.runAndWait()
+                    keyboard.press_and_release('Ctrl + w')
+                    engine.say("Done sir")
+                    engine.runAndWait()
+                        
+            if 'quit' in command :
+                    engine.say("Going offline in 5, 4, 3, 2, 1")
+                    engine.runAndWait()
+                    break
+                
+                
+                
+                
+            
+    #Statements to Handle errors while receiving voice commands
+    except speech.UnknownValueError:
+        print("Could not understand audio")
+    except speech.RequestError as e:
+        print("Could not request results; {0}".format(e))
+    except KeyboardInterrupt:
+        break
+engine.say("Nice interacting with you sir.")
+engine.runAndWait()
+print("Nice interacting with you!!")
+
+#
+
+# Main loop
+
+#
