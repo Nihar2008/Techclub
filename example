@@ -1,0 +1,23 @@
+import pyautogui 
+import keyboard
+import time
+
+keyboard.press_and_release('Windows + S')
+time.sleep(3)
+
+keyboard.write('Chrome')
+keyboard.press_and_release('Enter')
+
+time.sleep(4)
+keyboard.write('office.com')
+keyboard.press_and_release('enter')
+
+time.sleep(4)
+
+keyboard.write('office.com')
+keyboard.press_and_release('enter')
+
+time.sleep(4)
+
+pyautogui.moveTo(20,385)
+pyautogui.click()
